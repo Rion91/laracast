@@ -10,17 +10,18 @@ class BlogController extends Controller
 {
     public function index(){
         $blogs = Blog::latest()->filter(request(['search', 'category']))->get();
-        $categories =Category::get()->pluck('name', 'id');
+        $categories =Category::where('user_id', auth()->id())->get()->pluck('name', 'id');
 
         return view('index',compact(['blogs','categories']));
     }
 
     public function show(Blog $blog){
-        return view('show',compact('blog','category'));
+        $category = $blog->category;
+        return view('show',compact(['blog', 'category']));
     }
 
     public function create(){
-        $categories = Category::get()->pluck('name','id');
+        $categories = Category::where('user_id',auth()->id())->get()->pluck('name','id');
 
         return view('create', compact('categories'));
     }
@@ -85,3 +86,6 @@ class BlogController extends Controller
     //     return $blogs;
     // }
 }
+
+// user can create many categories
+// category -> user 

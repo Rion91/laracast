@@ -10,7 +10,7 @@
         <div class="col-sm-12 col-md-4">
           <div class="card text-center" style="height: 300px">
               <div class="card-header">
-                {{ $blog->category->NAME }}
+                {{ $blog->category->name }}
               </div>
               <div class="card-body">
                 <h5 class="card-title">{{ $blog->title }}</h5>

@@ -20,13 +20,13 @@ class DatabaseSeeder extends Seeder
         User::factory(5)->create();
         Blog::factory()->create();
         Category::factory()->create([
-            'name' => 'Book'
+            'name' => 'Book',
+            'user_id'=>1
         ]);
         Category::factory()->create([
-            'name' => 'Fruit'
+            'name' => 'Fruit',
+            'user_id'=>1
         ]);
-        Category::factory()->create([
-            'name' => 'Car'
-        ]);
+
     }
 }

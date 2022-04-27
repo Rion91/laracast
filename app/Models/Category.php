@@ -12,4 +12,8 @@ class Category extends Model
     public function blogs(){
         return $this->hasMany(Blog::class);
     }
+
+    public function author(){
+        return $this->belongsTo(User::class,'user_id');
+    }
 }

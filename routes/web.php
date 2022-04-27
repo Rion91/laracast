@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Models\Blog;
@@ -25,9 +26,11 @@ Route::post('/logout',[LoginController::class,'logout'])->name('logout');
 Route::get('/blogs/create',[BlogController::class,'create'])->name('blogs.create');
 Route::post('/blogs/store',[BlogController::class,'store'])->name('blogs.store');
 
+//category
+Route::get('/category/create',[CategoryController::class,'create'])->name('categories.create');
+Route::post('/category/store',[CategoryController::class,'store'])->name('categories.store');
+
 });
-
-
 
 Route::middleware('roleModel')->group(function(){
     //edit and update

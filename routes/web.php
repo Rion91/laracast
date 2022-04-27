@@ -30,6 +30,10 @@ Route::post('/blogs/store',[BlogController::class,'store'])->name('blogs.store')
 Route::get('/category/create',[CategoryController::class,'create'])->name('categories.create');
 Route::post('/category/store',[CategoryController::class,'store'])->name('categories.store');
 
+//show
+Route::get('/category/show',[CategoryController::class,'show'])->name('categories.show');
+Route::delete('/category/delete/{category}',[CategoryController::class,'destroy'])->name('categories.delete');
+
 });
 
 Route::middleware('roleModel')->group(function(){

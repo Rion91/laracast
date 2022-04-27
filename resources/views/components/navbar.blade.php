@@ -15,6 +15,12 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('blogs.create') }}">Create</a>
               </li>
+
+              {{-- category --}}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('categories.show') }}">Category</a>
+              </li>
+
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   {{ auth()->user()->name }}

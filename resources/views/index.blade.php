@@ -36,7 +36,7 @@
             <div class="col-sm-12 col-md-4 my-2">
               <div class="card text-center">
                   <div class="card-header">
-                    {{ $blog->category->name }}
+                    {{-- {{ optional($blog->category->name) }} --}}
                   </div>
                   <div class="card-body">
                     <h5 class="card-title">{{ $blog->title }}</h5>

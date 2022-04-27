@@ -9,24 +9,20 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
     public function index(){
-        $blogs = Blog::latest()->filter(request(['search', 'category']))->paginate(6);
+        $blogs = Blog::latest()->filter(request(['search', 'category']))->get();
         $categories =Category::get()->pluck('name', 'id');
 
         return view('index',compact(['blogs','categories']));
     }
 
     public function show(Blog $blog){
-        return view('show',[
-            'blog' => $blog
-        ]);
+        return view('show',compact('blog','category'));
     }
 
     public function create(){
         $categories = Category::get()->pluck('name','id');
 
-        return view('create', [
-            'categories' => $categories
-        ]);
+        return view('create', compact('categories'));
     }
 
     public function store(Request $request){

@@ -27,6 +27,8 @@ Route::post('/blogs/store',[BlogController::class,'store'])->name('blogs.store')
 
 });
 
+
+
 Route::middleware('roleModel')->group(function(){
     //edit and update
 Route::get('/blogs/edit/{blog}',[BlogController::class,'edit'])->name('blogs.edit');
